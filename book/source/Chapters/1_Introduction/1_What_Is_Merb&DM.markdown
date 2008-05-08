@@ -28,8 +28,8 @@ Comme DataMapper a des similitudes avec ActiveRecord nous ne mettrons en lumièr
 
 ### [RSpec](http://rspec.info/)
 
-RSpec is a Behaviour Driven Development framework for Ruby. 
-Merb currently supports the Test::Unit and RSpec testing frameworks. As the specs for Merb and Datamapper are written in RSpec, we will be covering some aspects of RSpec but it will not be our main focus.
+RSpec est un framework de conduite de test par Aspect (BDD : Behavious Driven Devlopment) pour Ruby.
+Merb supporte actuellement les frameworks de test Test::Unit et RSpec. Ainsi les spec et Merb et Datamapper sont écrit avec RSpec. nous couvrirons plusieurs aspects de RSpec mais cela ne sera pas notre principal but.
 
-RSpec is 
+RSpec est
 (TODO) Beef up this section a little. As this section is entitled "What's Merb, DataMapper & RSpec", we should probably spend a little time describing RSpec
