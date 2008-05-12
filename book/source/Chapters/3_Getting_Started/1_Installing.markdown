@@ -8,16 +8,35 @@ Avant de commencer assurez vous d'avoir bien installer les outils suivants:
 * Un DBMS (nous utiliserons [MySQL](http://mysql.org/))
 * [SVN](http://subversion.tigris.org/) et [git](http://git.or.cz/) (sur OSX, l'installation du port `git-core` fonctionne pour moi)
 
-### Installation de Merb
+### The Easy Way
+
+If you're on a *nix operating system (including Mac OS X) then keeping upto date with all the edge versions of these gems can be made really easy by using the [Edgy sake tasks](http://edgy.4ninjas.org).
+
+All you need to run to get `RSpec`, `merb-core`, `merb-more`, `dm-core`, `dm-more`, `data_objects` & all the other dependent gems installed automgically is...
+
+		sudo gem install sake
+		sake -i 'http://edgy.4ninjas.org/edgy.sake'
+		sake edgy:install packages="merb-stack"
+		
+
+And then to keep upto date you just need to execute
+
+		sake edgy:update
+
+### The Hard Way
+
+#### Installation de Merb
 ***
 Si vous avez une ancienne version de Merb (<0.9.2) vous devez supprimer tous ces gems avant de continuer. Utilisez `gem list` pour voir vos gems d'installé.
+
+    sudo gem uninstall merb
 ***
 Installation des gems `merb` 
 Installing the `merb` gems should be as simple as:
     
     sudo gem install merb --source http://merbivore.org
     
-    or for JRuby:
+*or for JRuby:*
     
     jruby -S gem install merb mongrel 
     
@@ -25,7 +44,12 @@ __Unfortunately__ we are living right on the edge of development so we'll need t
 
 Start by installing the `gem` dependancies:
 
-    sudo gem install rack mongrel json_pure erubis mime-types rspec hpricot \
+    sudo gem install rack mongrel json erubis mime-types rspec hpricot \
+        mocha rubigen haml markaby mailfactory ruby2ruby
+
+*or for JRuby:*
+
+    jruby -S gem install rack mongrel json_pure erubis mime-types rspec hpricot \
         mocha rubigen haml markaby mailfactory ruby2ruby
 
 Then download the `merb` source:
@@ -45,7 +69,7 @@ The `json_pure` gem is needed for merb to install on [JRuby](http://jruby.codeha
 Merb is ORM agnostic, but as the title of this book suggests we'll be using DataMapper.
 Should you want to stick with ActiveRecord or play with Sequel, check the [merb documentation](http://merb.rubyforge.org/files/README.html) for install instructions.
 
-### Installing DataMapper
+#### Installing DataMapper
 
 
 ***
@@ -78,7 +102,7 @@ To get the gems from source:
     
 To update a gem from source, run `git pull` and `rake install` again.
 
-### Install RSpec
+#### Install RSpec
 
 The `rspec` gem was installed in the Merb section above. However, if for some reason you didn't install it there, or want to grab the it from source, run the following commands:
 
@@ -86,20 +110,4 @@ The `rspec` gem was installed in the Merb section above. However, if for some re
     svn checkout http://rspec.rubyforge.org/svn/trunk rspec_trunk
 
 (TODO) RSpec moved to http://github.com/dchelimsky/rspec/tree/master
-
-### The Easy Way
-
-If you're on a *nix or OSX operating system then keeping upto date with all the edge versions of these gems can be made really easy by using the [Edgy sake tasks](http://edgy.4ninjas.org).
-
-All you need to run to get `RSpec`, `merb-core`, `merb-more`, `dm-core`, `dm-more`, `data_objects` & all the other dependent gems installed automgically is...
-
-		sudo gem install sake
-		sake -i 'http://edgy.4ninjas.org/edgy.sake'
-		sake edgy:install packages="merb-stack"
-		
-
-And then to keep upto date you just need to execute
-
-		sake edgy:update
-
 
