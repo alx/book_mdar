@@ -1,17 +1,18 @@
-## Getting Started
+## Démarrer
 
 <a href="http://xkcd.com/303/" target="_blank"> <img src="http://imgs.xkcd.com/comics/compiling.png" alt="XKCD - Compiling"> </a>
 
-Before we get started I'm going to assume you have the following installed:
+Avant de commencer assurez vous d'avoir bien installer les outils suivants:
 
 * [Ruby](http://www.ruby-lang.org/) 
-* A DBMS (we'll use [MySQL](http://mysql.org/))
-* [SVN](http://subversion.tigris.org/) and [git](http://git.or.cz/) (on OSX, port install `git-core` worked for me)
+* Un DBMS (nous utiliserons [MySQL](http://mysql.org/))
+* [SVN](http://subversion.tigris.org/) et [git](http://git.or.cz/) (sur OSX, l'installation du port `git-core` fonctionne pour moi)
 
-### Installing Merb
+### Installation de Merb
 ***
-If you have an older version of Merb (<0.9.2) you should remove the all the gems before continuing. Use `gem list` to see your installed gems.
+Si vous avez une ancienne version de Merb (<0.9.2) vous devez supprimer tous ces gems avant de continuer. Utilisez `gem list` pour voir vos gems d'installé.
 ***
+Installation des gems `merb` 
 Installing the `merb` gems should be as simple as:
     
     sudo gem install merb --source http://merbivore.org
