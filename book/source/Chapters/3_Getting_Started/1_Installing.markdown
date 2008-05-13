@@ -102,9 +102,9 @@ Récupérer les gems par les sources:
     
 Pour mettre à jour les gems à partir des sources, lancer `git pull` et encore une fois `rake install`.
 
-#### Install RSpec
+#### Installation de RSpec
 
-The `rspec` gem was installed in the Merb section above. However, if for some reason you didn't install it there, or want to grab the it from source, run the following commands:
+Le gem `rspec` a été installé précédement avec l'installation de Merb. Néanmoins, si pour quelque raison que ce soir, vous ne l'avez pas installer, ou que vous souhaitez l'installer à partir des source, lancez les commandes suivantes:
 
     gem install rspec
     svn checkout http://rspec.rubyforge.org/svn/trunk rspec_trunk
