@@ -69,19 +69,19 @@ Le gem `json_pure` est nécessaire pour installer merb sur [JRuby](http://jruby.
 Merb est ORM agnostic, mais comme le titre de ce livre le suggère, nous allons utiliser DataMapper.
 Si vous souhaitez utilisé ActiveRecord ou vous amuser avec Sequl, consulter la [documentation de merb](http://merb.rubyforge.org/files/README.html) pour les instructions d'installation.
 
-#### Installing DataMapper
+#### Installation de DataMapper
 
 
 ***
-DataMapper is splitting into `dm-core` and `dm-more` so `datamapper 0.3` will be outdated soon.
-If you have an older version of `datamapper`, `data_objects`, or `do_mysql`, `merb_datamapper` (< 0.9) you should remove them first. Remove the `merb_datamapper` gem  before installing `dm-merb` within `dm-more`.
+DataMapper est séparé entre `dm-core` et `dm-more`. Ainsi `datamapper 0.3` est dépassé depuis peu.
+Si vous avez d'ancienne version de  `datamapper`, `data_objects` ou  `do_mysql`, `merb_datamapper` (< 0.9) vous devez les supprimé en premier. Supprimer le gem `merb_datamapper` avant d'installer `dm-merb` de `dm-more`.
 ***
 
-We will use MySQL in the following example, but you can use either sqlite3 or PostgreSQL, just install the appropriate gem. You will also need to ensure that MySQL is on your system path for the gem to install correctly.
+Nous allons utilisé MySQL dans les exemples suivant, mais vous pouvez utiliser sqlite3 ou PostgreSQL après l'installation du gem approprié. Vous devez aussi vous assurez que MySQL est dans votre path système pour installer correctement le gem.
 
 (TODO) - JDBC_do install
 
-To get the gems from source:
+Récupérer les gems par les sources:
 
 	git clone git://github.com/sam/do.git
 
@@ -100,7 +100,7 @@ To get the gems from source:
     cd dm-migrations ; rake install ; cd ..
     cd dm-validations ; rake install ; cd ..
     
-To update a gem from source, run `git pull` and `rake install` again.
+Pour mettre à jour les gems à partir des sources, lancer `git pull` et encore une fois `rake install`.
 
 #### Install RSpec
 
