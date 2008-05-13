@@ -8,66 +8,66 @@ Avant de commencer assurez vous d'avoir bien installer les outils suivants:
 * Un DBMS (nous utiliserons [MySQL](http://mysql.org/))
 * [SVN](http://subversion.tigris.org/) et [git](http://git.or.cz/) (sur OSX, l'installation du port `git-core` fonctionne pour moi)
 
-### The Easy Way
+### La solution facile
 
-If you're on a *nix operating system (including Mac OS X) then keeping upto date with all the edge versions of these gems can be made really easy by using the [Edgy sake tasks](http://edgy.4ninjas.org).
+Si vous êtes sur un système d'explotation *nix (comprenant Mac OS X) alors garder les mises à jours de toutes les versions de ces gems peux être fait simplement en utilisant le [Edgy sake tasks](http://edgy.4ninjas.org).
 
-All you need to run to get `RSpec`, `merb-core`, `merb-more`, `dm-core`, `dm-more`, `data_objects` & all the other dependent gems installed automgically is...
+Tout ce dont vous avez besoin `RSpec`, `merb-core`, `merb-more`, `dm-core`, `dm-more`, `data_objects` et toutes les dépendances sont installé automatiquement..
 
 		sudo gem install sake
 		sake -i 'http://edgy.4ninjas.org/edgy.sake'
 		sake edgy:install packages="merb-stack"
 		
 
-And then to keep upto date you just need to execute
+Une fois cela réalisé, pour garder une version à jour vous pouvez executer la commande suivante :
 
 		sake edgy:update
 
-### The Hard Way
+### La solution plus compliqué
 
 #### Installation de Merb
+
 ***
 Si vous avez une ancienne version de Merb (<0.9.2) vous devez supprimer tous les gems de merb et datamapper avant de continuer. Utilisez `gem list` pour voir vos gems d'installé.
 
     sudo gem uninstall merb
 ***
-Installation des gems `merb` 
-Installing the `merb` gems should be as simple as:
+L'installation des gems `merb` est aussi simple que:
     
     sudo gem install merb --source http://merbivore.org
     
-*or for JRuby:*
+*ou pour JRuby:*
     
     jruby -S gem install merb mongrel 
     
-__Unfortunately__ we are living right on the edge of development so we'll need to get down and dirty with building our own gems from source. Luckily this is much easier than it sounds... 
+__Malheureusement__ nous vivons sur une version en dévelopement alors nous aurons besoin recuperer et compiler notre propre gems à partir des sources. Heureusment c'est plus simple que ce que l'on aurait pu croire...
 
-Start by installing the `gem` dependancies:
+Commençons par installer les `gems` en dépendances:
 
     sudo gem install rack mongrel json erubis mime-types rspec hpricot \
         mocha rubigen haml markaby mailfactory ruby2ruby
 
-*or for JRuby:*
+*ou pour JRuby:*
 
     jruby -S gem install rack mongrel json_pure erubis mime-types rspec hpricot \
         mocha rubigen haml markaby mailfactory ruby2ruby
 
-Then download the `merb` source:
+Ensuite téléchargez les sources de `merb`:
 
     git clone git://github.com/wycats/merb-core.git
     git clone git://github.com/wycats/merb-plugins.git
     git clone git://github.com/wycats/merb-more.git
 
-Then install the gems via rake:
+Enfin, installation des gems grâce à rake:
 
    	cd merb-core ; rake install ; cd ..    
     cd merb-more ; rake install ; cd ..
     cd merb-plugins; rake install ; cd ..
 
-The `json_pure` gem is needed for merb to install on [JRuby](http://jruby.codehaus.org/) (Java implementation of a Ruby Interpreter), otherwise use the `json` gem as it's faster.
+Le gem `json_pure` est nécessaire pour installer merb sur [JRuby](http://jruby.codehaus.org/) (l'implémentation Java de l'interpréteur Ruby), sinon l'utilisation du gem `json` est plus rapide.
 
-Merb is ORM agnostic, but as the title of this book suggests we'll be using DataMapper.
-Should you want to stick with ActiveRecord or play with Sequel, check the [merb documentation](http://merb.rubyforge.org/files/README.html) for install instructions.
+Merb est ORM agnostic, mais comme le titre de ce livre le suggère, nous allons utiliser DataMapper.
+Si vous souhaitez utilisé ActiveRecord ou vous amuser avec Sequl, consulter la [documentation de merb](http://merb.rubyforge.org/files/README.html) pour les instructions d'installation.
 
 #### Installing DataMapper
 
