@@ -5,8 +5,14 @@
 Avant de commencer assurez vous d'avoir bien installer les outils suivants:
 
 * [Ruby](http://www.ruby-lang.org/) 
-* Un DBMS (nous utiliserons [MySQL](http://mysql.org/))
+* [RubyGems >= 1.1.0](http://www.rubygems.org/)
 * [SVN](http://subversion.tigris.org/) et [git](http://git.or.cz/) (sur OSX, l'installation du port `git-core` fonctionne pour moi)
+
+#### What will be covered
+
+ * Installing Merb, DataMapper and RSpec
+ * Creating a temporary test app
+ * The basic directory structure for the framework
 
 ### The Easy Way
 
