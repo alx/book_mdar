@@ -74,10 +74,9 @@ Enfin, installation des gems grâce à rake:
 Le gem `json_pure` est nécessaire pour installer merb sur [JRuby](http://jruby.codehaus.org/) (l'implémentation Java de l'interpréteur Ruby), sinon l'utilisation du gem `json` est plus rapide.
 
 Merb est ORM agnostic, mais comme le titre de ce livre le suggère, nous allons utiliser DataMapper.
-Si vous souhaitez utilisé ActiveRecord ou vous amuser avec Sequl, consulter la [documentation de merb](http://merb.rubyforge.org/files/README.html) pour les instructions d'installation.
+Si vous souhaitez utilisé ActiveRecord ou vous amuser avec Sequel, consulter la [documentation de merb](http://merb.rubyforge.org/files/README.html) pour les instructions d'installation.
 
 #### Installation de DataMapper
-
 
 ***
 DataMapper est séparé entre `dm-core` et `dm-more`. Ainsi `datamapper 0.3` est dépassé depuis peu.
@@ -90,13 +89,13 @@ Nous allons utilisé MySQL dans les exemples suivant, mais vous pouvez utiliser 
 
 Récupérer les gems par les sources:
 
-	git clone git://github.com/sam/do.git
-
-	cd do
-	cd data_objects
-	rake install ; cd ..
-	cd do_mysql  # || do_postgres || do_sqlite3
-	rake install
+    git clone git://github.com/sam/do.git
+    
+    cd do
+    cd data_objects
+    rake install ; cd ..
+    cd do_mysql  # || do_postgres || do_sqlite3
+    rake install
 
     git clone git://github.com/sam/dm-core.git
     git clone git://github.com/sam/dm-more.git
@@ -113,8 +112,11 @@ Pour mettre à jour les gems à partir des sources, lancer `git pull` et encore 
 
 Le gem `rspec` a été installé précédement avec l'installation de Merb. Néanmoins, si pour quelque raison que ce soir, vous ne l'avez pas installer, ou que vous souhaitez l'installer à partir des source, lancez les commandes suivantes:
 
-    gem install rspec
-    svn checkout http://rspec.rubyforge.org/svn/trunk rspec_trunk
-
-(TODO) RSpec moved to http://github.com/dchelimsky/rspec/tree/master
-
+    gem install -r rspec
+    
+    # or
+    
+    git clone git://github.com/dchelimsky/rspec.git
+    cd rspec
+    rake gem
+    sudo gem install pkg/rspec-*.gem
