@@ -2,16 +2,15 @@
 
 Maintenant que tout est installé, il est temps de créer une application Merb de test.
 
-Merb-more 
-Merb-more comes with a `gem` called `merb-gen`, this gives you a command line tool by the same name which is used for all of your generator needs. You can think of it as `script/generate`  done the Merb way. Running `merb-gen` from the command line with no arguments will show you all of the generators that are available.
+Merb-more vient avec un `gem` appelé `merb-gen`, cela fournit un outil en ligne de commande du même nom utilisé par tous les générateurs dont vous aurez besoin. Vous pouvez le considérer comme le `script/generate` de Merb. Lancer la commande `merb-gen` sans arguments vous montreras tous les générateurs disponible.
 
-Merb follows the same naming convention for projects as rails, so 'my\_test\_app' and 'Test2' are valid names but 'T 3' is not (they need to be valid SQL table names).
+Merb suit la même convention de nommage que Rails, ainsi 'my\_test\_app' et 'Test2' sont des noms valides mais 'T 3' ne l'est pas (ils ont besoin d'être des noms valides de tables SQL).
 
     merb-gen app test
     
-This will generate an empty Merb app, so lets go in and take a look. You'll notice that the directory structure is similar to Rails, with a few differences.
+Cela générera une application Merb vide, allons-y et regarder. Vous remarquerais que la structure des répertoire est similaire à Rails, avec peu de différence.
 
-    # expected output
+    # sortie attendu
     RubiGen::Scripts::Generate
       create  app
       create  app/controllers
@@ -50,23 +49,23 @@ This will generate an empty Merb app, so lets go in and take a look. You'll noti
       create  spec/spec_helper.rb
       create  /Rakefile
 
-### Configuring Merb
+### Configuration de Merb
 
-Before we get the server running, you'll need to edit the init.rb file and un-comment the following line (this is only necessary if you need to connect to a database, which we do in our case):
+Avant de lancer le serveur, vous devez éditer le fichier init.rb et décommenter la ligne suivante ( C'est nécessaire si vous avez besoin de vous connecter à une base de donnée, ce que nous ferons dans notre cas):
 
 config/init.rb
     
     use_orm :datamapper
     
-Typing `merb` now in your command line will try and start the server.
+Tapez désormais `merb` dans votre console pour démarrer le serveur.
 
     Started merb_init.rb ...
     No database.yml file found in /Users/work/merb/example_one/config.
     A sample file was created called database.sample.yml for you to copy and edit.
 
-As you can see, we forgot to set up the database. A sample file has helpfully been generated for us. Edit this and rename it to database.yml:
+Comme vous pouvez le voir, nous avons oublié de définir la base de donnée. Un fichier d'example à gentiement été généré pour nous. Editez le et renommé le en database.yml:
 
-    # This is a sample database file for the DataMapper ORM
+    # Ceci est un example de fichier database pour l'ORM DataMapper
     development:
        adapter: mysql
        database: test
@@ -75,20 +74,19 @@ As you can see, we forgot to set up the database. A sample file has helpfully be
        host: localhost
 	   socket: /tmp/mysql.sock
 
-Don't forget to specify your socket, if you do not know it's location, you can find it by typing:
+N'oubliez pas de spécifier votre socket. Si vous ne connaissez pas son emplacement, vous pouvez chercher en tapant:
 
 	mysql_config --socket
 
-Starting Merb again shows that everything is running okay.
+Un redemmarage de Merb vous montreras que tout fonctionne normalement.
 
-The following command will give you access to the Merb console:
+La commande suivante vous donnera accés à la console de Merb:
 
 	merb -i
 
-You'll notice Merb runs on port 4000, but this can be changed with flag `-p [port number]`. More options can be found by typing:
+Vous pourrez constater que Merb tourne sur le port 4000, mais vous pouvez le changer avec l'option `-p [numéro du port]`, Toutes les options peuvent être trouvé en tapant:
 
     merb --help
     
-You can even run Merb with any application server that supports rack (thin, evented_mongrel, fcgi, mongrel, and webrick):
-
+Vous pouvez même lancer avec toutes applications serveur supporté par rack (thin, evented_mongrel, fcgi, mongrel et webrick):
     merb -a thin
