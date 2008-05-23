@@ -1,36 +1,35 @@
-## A little blog
+## Un petit blog
 
-#### What will be covered
+#### Ce qui sera couvert
 
- * Setting up the example blog application
- * Creating the models
- * Configuring your routes
- * RESTful controllers
- * Some of the view helpers in `merb_helpers`
- * Configuring and sending emails
+ * Configuration de l'application de blog d'exemple
+ * Création des Models
+ * Configuration des routes
+ * Controllers RESTful
+ * Quelque helpers de vue de `merb-helper`
+ * Configuration et envoi de mails
 
-In the examples we'll be developing a small blogging application. It's a good idea to grab the source code from [http://github.com/deimos1986/book_mdar/tree/master/code](http://github.com/deimos1986/book_mdar/tree/master/code), so you can follow along with the examples.
+Dans cette example nous allons dévelloper une petite application de blogging. C'est une bonne idée de récupérer le code source de [http://github.com/deimos1986/book_mdar/tree/master/code](http://github.com/deimos1986/book_mdar/tree/master/code), ainsi suivre avet l'exemple.
 
-First of all let's define some of the functionality we would expect from any blogging application. 
+Premièrement, nous allons définir quelques fonctionnalités que nous attendons d'une application de blogging.
 
-* Publishing posts
-* Leaving comments
-* Sending email notifications
-* Attaching images
-* Authentication
+ * Puublication de posts
+ * Laisser des commentaires
+ * Envoyer des notifications par email
+ * Attacher des Images
+ * Authentification
 
-We're going to call our app `golb`, think of it as a backward blog. Feel free to change the name of your app but remember to change the word `golb` for the name of your app.
+Nous allons appeler notre application `glob`, qui est le mot blog à l'envers. Vous pouvez tout à fait changer de nom pour votre application, mais souvenez vous de changer le mot `glob` pour le nom de votre application.
 
-To make a new app we'll use the command
+Pour réaliser une nouvelle application, nous allons utiliser la commande
 
     merb-gen app golb
 
-We're going to use the Linguistics gem later on, you can install it with:
+Nous allons utiliser le gem Linguistics plus tard, vous pouvez l'installer : 
     
     gem install Linguistics
 
-
-Set up the configuration files for your application, this lets Merb know what gems to load for plugins and generators.
+Créer le fichier de configuration pour votre application pour permettre à Merb quel Plugins et generateur doit charger. 
 
 config/init.rb
 
@@ -41,12 +40,12 @@ config/init.rb
 	dependencies "Linguistics", "dm-validations"
 
 
-Now add a config/database.yml file with the following:
+Maintenant ajouter un fichier config/dataase comme ci suit:
     
 	---
-	# Edit this file:
+	# Editer ce fichier:
 	:development: &defaults
-	    # These are the settings for repository :default
+	    # Ce sont les configurations du repository :default
 	    :adapter:  mysql
 	    :database: golb
 	    :host: localhost
@@ -56,7 +55,7 @@ Now add a config/database.yml file with the following:
 	    :socket: /opt/local/var/run/mysql5/mysqld.sock
 
 	test: &defaults
-	    # These are the settings for repository :default
+	    # Ce sont les configurations du repository :default
 	    :database: golb_test
       
-Now we're ready to rock and roll ...
+Maintenant nous sommes pret, rock and roll…
