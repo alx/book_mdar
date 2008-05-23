@@ -2,23 +2,23 @@
 
 (TODO) - rewrite for DM 0.9, and make this section clearer
 
-### Getting started
+###  Démarrons
 
-Having discussed the functionality we can deduce that we will need the following models, `Post`, `Comment`, `Tag`, `User` and `Image`.
+Au vu des fonctionnalités nous pouvons en déduire que nous aurons besoin des models suivant, `Post`, `Comment`, `Tag`, `User` et `Image`.
 
-Building a model with Merb and DataMapper requires generating a model, specifying attributes (properties), and running a migration to create the database table and all the properties. Generating a model is similar to Rails, as is running a migration. But unlike Rails and ActiveRecord, Mern and DataMapper use no separate migration files. Instead, properties are defined in the model itself. (Describe the benefit of defining properties in the model? Why is that better than the separate ActiveRecord migrations?)
+Construire un model adec Merb et DataMappper nécessite de générer un model, spécifiant les attributs (propriété) et lançant une migration pour créer la table de la base de donnée et toutes les propriétés. La génération d'un modèle est similaires à Rails lançant la migration. Mais contrairement à Rails et ActiveRecords, Merb et DataMapper N'utilise pas de fichier de migration séparé. Ala place les propriétés sont définis dans le model lui-même. (Décrire l'avantage de définir les propriétés dans le modèle ? Pourquoi est-ce meilleur de séparer les migations dans ActiveRecord ?)
 
-#### The Model Generator
+####  Le générateur de Model
 
-DataMapper has a model generator just as Rails does:
+DataMapper a un générateur de modèle exactement comme Rails:
 
     merb-gen model post
 
-This will make a post model for you, provided that you have defined an orm and the database golb, in the previous steps.
+Cela créé un model post pour vous, utilisant l'ORM et la base de donnée glob que vous avez défini dans l'étape précédente.
 
-(Don't mention `rake dm:db:automigrate` at this point because if it is run without properties, the user will get an SQL error.)
+(Nous ne parlons pas de `rake dm:db:migrate` à ce niveau car lancé sans propriétés, l'utilisateur aura une erreur SQL)
 
-You can set the name of the database table in your model if it is called something different with:
+Dour pouvez définir le nom de la table de la base de données si vous appelez quelque chose de différent:
 
     set_table_name 'list_of_posts'
     
