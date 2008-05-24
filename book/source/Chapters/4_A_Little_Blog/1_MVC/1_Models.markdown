@@ -22,19 +22,18 @@ Dour pouvez définir le nom de la table de la base de données si vous appelez q
 
     set_table_name 'list_of_posts'
     
-This is only necessary if you are using an already existing database.
+C'est nécessaire seulement si vous utilisez déjà une base de donnée existante.
 
-#### Properties
+#### Propriétés
 
-So DataMapper models differ a bit from ActiveRecord models as previously stated. Defining the database columns is achieved with the `property` method.
+Ainsi les modèles DataMapper différe un peu qu'ActiveRecord comme indiqué précédemment. Définir les colonnes de la table est réalisé avec la méthode `property`.
 
 app/models/post.rb
 
     property :title,  String, :lazy => false
-    
-This is the `title` property of the post model. As we can see, the parameters are the name of the table column followed by the type and finally the options. 
+Ceti est la propriété `title` du modèle post. Comme nous pouvons le voire les paramétres ont le nom de la colonne suivit par le type et enfin les options.
 
-Some of the available options are:
+Voici une liste d'option disponible:
 (TODO) - cover more properties
 
     :public, :protected, :private, :accessor, :reader, :writer,
@@ -42,27 +41,27 @@ Some of the available options are:
     :format, :index, :check, :ordinal, :auto_validation, :validates, :unique,
     :lock, :track, :scale, :precision
 
-    :key          - Set as primary key
-    :serial       - auto-incrementing key
-    :lazy         - Lazy load the specified property (:lazy => true).
-    :default      - Specifies the default value
-    :column       - Specifies the table column
-    :nullable     - Can the value be null?
-    :index        - Creates a database index for the column
-    :accessor     - Set method visibility for the property accessors. Affects both
-                    reader and writer. Allowable values are :public, :protected, :private.
-    :reader       - Like the accessor option but affects only the property reader.
-    :writer       - Like the accessor option but affects only the property writer.
-    :protected    - Alias for :reader => :public, :writer => :protected
-    :private      - Alias for :reader => :public, :writer => :private
+    :key          - Définir comme clé primaire
+    :serial       - Clé auto-incrémenté
+    :lazy         - Chargement en Lazy spécifié éar la propriété (:lazy => true).
+    :default      - Défini la valeur par défaut
+    :column       - Défini le nom de la colonne
+    :nullable     - la valeur peux être null?
+    :index        - Créer un index pour la colonne
+    :accessor     - Définie la visibilité de la méthode d'accession à la propriété. Affect les deux, en lecture et écriture. 
+                    Les valeurs permisent sont :public, :protected, :private.
+    :reader       - Comme l'option accessor mais n'affectant que la propriété de lecture.
+    :writer       - Comme l'option accessor mais n'affectant que la propriété d'écriture.
+    :protected    - Alias pour :reader => :public, :writer => :protected
+    :private      - Alias pour :reader => :public, :writer => :private
     
 (TODO) - talk about accessors and overriding them
     
-DataMapper supports the following properties:
+DataMapper supporte les propriété suivante:
 
 * TrueClass, Boolean
 * String
-* Text (limit of 65k characters by default)
+* Text (limitation à 65k charactères par défaut)
 * Float
 * Fixnum, Integer
 * BigDecimal
@@ -75,24 +74,24 @@ DataMapper supports the following properties:
 
 #### Associations
 
-Like ActiveRecord, DataMapper has associations which define relationships between models.
-There is difference in syntax but the underling idea is the same. Continuing with the `Post` model we can see a few of the associations defined:
+Comme ActiveRecord, DataMapper ont des associations qui peuvent être définis entre les modèles.
+Il y a une différence de syntaxe mais l'idée sous-jacente est la même. Continuons avec notre modèle `Post`, nous pouvons voir un peu les associations défini par:
     
     one_to_many :comments
     many_to_one :author, :class => 'User', :foreign_key => 'author_id'
     
 (TODO) the alternate has n..n syntax for relationships
     
-Pretty straight forward. A few things you should note however, you do not need to specify the foreign key as a property if it's defined in the association, and currently `has\_one` is implemented as `has\_many` (so it returns an array with one object instead of just the object itself, but this is will likely change!).
+C'est assez simple. Vous pouvez néanmoins noté que vous n'avez pas besoin de spécifier la clé étrangères comme unne propriété si elle est défini dans l'association. Actuellement `has\_one` est implémenté comme `has\_many` (ils retourne aussi une array avec un objet au lieu d'un objet seul, mais il est prévu que ça change!)
 
-You also don't have to specify a relationship at all if you don't want to, as models can have one way relationships.
+Vous n'êtes pas obligé de spécifié une relation des deux cotés  si vous le souhaitez' un modèle peux avoir qu'un seul sens de relation.
 
-##### Polymorphic associations
+##### Les associations polymorphiques
 http://pastie.textmate.org/private/mrvx3qmuagypwukrri9jq
 (TODO) -polly assoc (pastie link is broken)
 
-##### Where is my `has\_many :through`?!
-`has\_many :through` is in the pipes, but it is not currently in DM. You can however mimic that behaviour by specifying the tables to join on, in the join model.
+##### Où est mon :through de `has\_many`?!
+`has\_many :through` est dans le tuyau, mais il n'est past actuellement dans DM. Vous pouvez néamoins imité cet aspect en spécifiant la tables à joindre dans le modèle de jointure.
 
     # has_many :categories, :through => :categorizations
     has_many :categorizations
