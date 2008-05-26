@@ -101,17 +101,17 @@ http://pastie.textmate.org/private/mrvx3qmuagypwukrri9jq
       :left_foreign_key => "post_id",
       :right_foreign_key => "category_id",
       :class => "Category"
-    
+
 You still have access to `.categorizations` and you now have access to `.categories` as well… plus no new tables or nothing. If `categorizations` had, say, a `score` column on it which stores how strongly your `categorization` process thinks this post belongs to this category, you could tack on `:order => 'score desc'` to the `has\_and\_belongs\_to\_many` just fine.
  
 #### Validation
 
 (TODO) - custom validation, and validatable gem
-It’s a known fact that users are stupid. They screw up; it happens. They enter information in the wrong format, leave required fields blank, or even enter in completely horrid data because they’re idiots and that’s what idiots do. I point you at [YouTube](http://www.youtube.com) video comments, [Digg](http://www.digg.com) (as a whole), and [MySpace](http://www.myspace.com) as proof of web users’ collective idiocy.
+C'est un fait reconnu, les utilisateurs sont stupides. Ils merdent quoi qu'il arrive. Ils entrent une donnée dans un mauvais format, laisse un champs requis blanc ou même entre d'horrible données parce qu'ils sont idiots et font les idiots. Je prend pour témoins les commentaires vidéo de [YouTube](http://www.youtube.com), de [Digg](http://www.digg.com) et [MySpace](http://www.myspace.com) comme une prevue de l'idiocie collective des utilisateurs web.
 
-But, alas, they’re how we make our money online. Thus, we need to guard against user error by validating anything that we need to save out to our persistence layers. Sometimes that means guarding against hack attempts, but most of the time it means guarding against invalid data and accidents.
+Hélas, c'est grâce à eux que nous gagnons notre argent. Alors, nous avons besoin de les conserver malgrés leur erreurs d'utilisateur qui valide n'importe quoi. Alors nous avons besoin d'enregistrer ca dans notre couche de persistence. Parfois, c'est de la protection contre des attaques, mais souvent c'est simplement contre des données invalides entrées par erreur.
 
-Both ActiveRecord and DataMapper have a concept called Validations, which is ultimately a set of callbacks which fire right before an object gets saved out to our persistence layer and interrupt things when it detects something awry.
+ActiveRecord et DataMapper on un concept de Validations appelé, qui ne sont qu'une somme de callback qui permet de circoncir le feu avant qu'un objet soit enregistré dans notre couche de persistance et ainsi interrompre dès que quelque chose de faux est détecté.
 
 A problem arises when your website has users creating content and content being created automatically from scrapers or some sort of automated background process (be it from RSS feeds, an FTP server or a web service). No idiots are involved in the creation of content when it’s imported into the system and you likely really want that content to appear in your system. This is where Group Validations come in to play.
 
