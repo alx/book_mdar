@@ -113,13 +113,13 @@ Hélas, c'est grâce à eux que nous gagnons notre argent. Alors, nous avons bes
 
 ActiveRecord et DataMapper on un concept de Validations appelé, qui ne sont qu'une somme de callback qui permet de circoncir le feu avant qu'un objet soit enregistré dans notre couche de persistance et ainsi interrompre dès que quelque chose de faux est détecté.
 
-A problem arises when your website has users creating content and content being created automatically from scrapers or some sort of automated background process (be it from RSS feeds, an FTP server or a web service). No idiots are involved in the creation of content when it’s imported into the system and you likely really want that content to appear in your system. This is where Group Validations come in to play.
+Un problème arrive une fois que votre site web a des utilisateurs créant un contenu, contenu créé automatiquement par des décapeurs ou des processus automatique ( qui peuvent être des flux RSS, un serveur FTP ou un web service ). Aucun idiot n'est impliqué dans la création de contenu quand c'est importé par le système et que vous voulez vraiment que le contenu apparaissent dans votre système. C'est là qu'un Groupe de Validation entre en jeu.
 
-Group Validations are callbacks which kick-in as a subset, rather than all validations running at once. You might want to make sure that a user enters the title for a blog post in your system, but you don’t really want such a check for when that blog post comes in off of your RSS scraping system. Maybe you’d send those imported blog posts into a holding pen somewhere so that they can be rescued later, rather than preventing their save and never importing them in at all.
+Les Groupes de validations sont des callbacks qui stop comme un mal-propre, au lieu que toutes les validations ne fonctionnent qu'une fois. Vous pouvez vouloir être sur qu'un utilisateur entre un titre pour un billet dans votre système, mais vous ne voulez vraiment pas vérifier tout ça quand votre billet vient de votre système de récupération de flux RSS. Peut-être que vous envoyé ces billets importé dans une zone tampon, quelque part où vous pourrez le récupérer plus tard, plutôt que d'empêcher leur enregistrement et de ne jamais les importer.
 
-With ActiveRecord, if you declare a `validates\_presence\_of` on `:title`, that’s it - game over. The only way to bypass that validation is to `save\_without\_validations` and that skips all of your validations, rather than just this one.
+Avec ActiveRecord, si vous déclarez un `validates\_presence\_of` sur `:title`, alors, c'est perdu. La seule possibilité pour contourner cette validation est de faire un `save\_without\_validations` mais cela saute tous les autres validations et non pas un seul.
 
-But with DataMapper and it’s use of Validatable, you can check for the validity of an object depending on the circumstance you’re in. Here’s what that blog post model would look like if we wanted to validate blog posts by idiots, but not from our not-so-idiotic scrapper:
+Mais avec DataMapper et son système de Vlidatable, vous pouvez vérifier la validité d'un objet en fonction de la circonstance où vous êtes. Ici vous pouvez vouloir valider l'enregistrement des billets par les idiots, mais pas par notre récupérateur-peu-idiot.
 
 If this shit doesn’t work, consider it pseudo-code. If it does work, I’m a badass (quoted! -bj)
 
