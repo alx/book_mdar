@@ -1,16 +1,15 @@
 ## Préface
 
-This is a collaborative effort to document the features of Merb and DataMapper, 
-while also providing example Merb applications.  
+Ceci est l'éffort collaboratif de documenter les fonctionnalités de Merb et DataMapper
+tout en fournissant des exemples d'applications réalisé avec Merb.  
 
 ___Pour qui est donc tout ceci?___
 
 Le lecteur cible est n'importe qui ayant quelques expériences avec l'écriture d'applications Ruby on Rails et cherche d'autres frameworks à essayer. Alors si vous cherchez l'équivalent de l'[AWDR](http://www.pragprog.com/titles/rails3) pour Merb, vous serez déçu car tout n'est pas (encore) couvert.
 
 Copyright &copy; 2008 aux auteurs respectifs.
->>>>>>> shingara/french:book/source/Chapters/0/2_Preface.markdown
 
-* * (NdT) New Bamboo est la société de la première personne a avoir contribué à ce livre
+* (NdT) New Bamboo est la société de la première personne a avoir contribué à ce livre
 
 ### Auteurs
 
@@ -31,6 +30,7 @@ Copyright &copy; 2008 aux auteurs respectifs.
 * Matt Aimonetti
 * Cyril Mougel (Traduction Française)
 * Othmane Benkirane (Traduction Française)
+* Mathieu Fosse (Traduction Française)
 
 
 <br />

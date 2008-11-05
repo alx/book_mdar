@@ -22,7 +22,7 @@ namespace :book do
 
     desc "publish all versions and then deploy"
     task :deploy => ['book:output:html', 'book:output:plain'] do
-      `scp -r book/output/* ninja@4ninjas.org:public_html/merb/`
+      `scp -r book/output/* pointcom@etrangelabs.com:/usr/local/var/www/merbook.etrangelabs.com`
     end
   end
 end
