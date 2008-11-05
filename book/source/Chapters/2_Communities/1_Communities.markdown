@@ -1,27 +1,26 @@
-## Communities
+## Communauté
 
-> i'm going to become rich and famous after i invent a device that allows you to
-> stab people in the face over the internet - <[SA]HatfulOfHollow>
+> Je deviendrais riche et célébre après avoir inventer un système qui permet de poignarder les gens grâce à Internet - <[SA]HatfulOfHollow>
 
-The internet is a scary place, but fortunately the Ruby community is very 
-friendly. All these open source projects rely on the contributions from the 
-community, if something needs fixing consider helping out.
+Internet est un endroit effrayant, mais heurement la communauté Ruby est très 
+chaleureuse. Tous ses projets open source ont confiance en la communauté open 
+source pour ses contributions, si quelque chose nécessite d'être résolu.
  
-### Websites
+### Site internet
 
-These are the first places to go for help. Check out the API documentation and 
-see if you can find your answer there.
+Ils sont les premiers endroits à allez pour chercher de l'aide. Examiner la documentation de l'AP et 
+regarder si vous pouvez trouver une réponse à votre question.
 
 * [http://merbivore.com/](http://merbivore.com/)
 * [http://merbunity.com/](http://merbunity.com/)
 * [http://datamapper.org/](http://datamapper.org/)
 * [http://rspec.info/](http://rspec.info/)
 
-### IRC Channels - freenode.net
+### Les channels IRC - freenode.net
 
-If you can't find what you were looking for in the API docs then you could join 
-the respective IRC channel on FreeNode and ask your question in there, you may 
-need to wait for a response. 
+Si vous n'arrivez pas à trouver ce que vous chercher dans la documentation de l'API, alors vous pouvez nous rejoindre 
+sur les channels IRC sur FreeNode et y poser votre question. Vous pouvez 
+y attendre pour obtenir une réponse.
 
 * [#merb](irc://irc.freenode.net/merb)
 * [#datamapper](irc://irc.freenode.net/datamapper)
@@ -29,20 +28,19 @@ need to wait for a response.
 
 ### Mailing Lists
 
-The mailing lists are another good way to get help, the response time isn't as 
-fast as asking in an IRC channel but it can be useful to do a search to see if 
-someone else has had your problem before.
+Mes mailling lists sont une autre bonne façon d'obtenir de l'aide, le temps de réponse n'est pas aussi 
+rapide que de demandé sur un chan irc. Mais cela peux être utile pour faire une recherche pour voir si 
+quelqu'un a déjà rencontrer votre problème.
 
 * [http://groups.google.com/group/merb/](http://groups.google.com/group/merb/)
 * [http://groups.google.com/group/datamapper/](http://groups.google.com/group/datamapper/)
 * [http://rubyforge.org/pipermail/rspec-users/](http://rubyforge.org/pipermail/rspec-users/)
 
-### Bug Trackers
+### Suivi des bugs
 
-Your problem may or may not be a known bug. Search the bug trackers and submit 
-a ticket if it's not there already (don't forget to include a description and test 
-cases, or better yet: a patch!). You may find the ticket is solved in the edge 
-version.
+Votre problème peux ou peux ne pas être connu comme un bug. Cherchez sur le suivi de bugs et soumettez 
+un ticket si il n'y est pas déjà. (Ne pas oubliez d'include une description et un cas de 
+test, ou encore mieux: un patch!). Vous pouvez cherchez les tickets a résoudre sur la version edge.
 
 * [http://merb.lighthouseapp.com/](http://merb.lighthouseapp.com/)
 * [http://wm.lighthouseapp.com/projects/4819-datamapper/overview](http://wm.lighthouseapp.com/projects/4819-datamapper/overview)

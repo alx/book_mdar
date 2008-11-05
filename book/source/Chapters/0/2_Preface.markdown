@@ -1,18 +1,18 @@
-## Preface
+## Préface
 
 This is a collaborative effort to document the features of Merb and DataMapper, 
 while also providing example Merb applications.  
 
-___Who is this for?___
+___Pour qui est donc tout ceci?___
 
-The target reader is someone who has some experience with writing Ruby on Rails 
-applications, and is looking to try out a new framework. So if your looking for 
-the [AWDR](http://www.pragprog.com/titles/rails2) equivalent for Merb, you may 
-be disappointed as this is a work in progress.
+Le lecteur cible est n'importe qui ayant quelques expériences avec l'écriture d'applications Ruby on Rails et cherche d'autres frameworks à essayer. Alors si vous cherchez l'équivalent de l'[AWDR](http://www.pragprog.com/titles/rails3) pour Merb, vous serez déçu car tout n'est pas (encore) couvert.
 
-Copyright &copy; 2008 Respective Authors.
+Copyright &copy; 2008 aux auteurs respectifs.
+>>>>>>> shingara/french:book/source/Chapters/0/2_Preface.markdown
 
-### Authors
+* * (NdT) New Bamboo est la société de la première personne a avoir contribué à ce livre
+
+### Auteurs
 
 * Matt Aimonetti
 * Eric Allam
@@ -25,15 +25,21 @@ Copyright &copy; 2008 Respective Authors.
 * Ben Reubenstein
 * Jonathan Stott
 * Damien Tanner
-* (add your name here, alphabetically)
+* Gwyn Morfey
+* Martyn Loughran
+* Matthew Ford
+* Matt Aimonetti
+* Cyril Mougel (Traduction Française)
+* Othmane Benkirane (Traduction Française)
+
 
 <br />
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/uk/">Creative Commons Attribution-Noncommercial 2.0 UK: England & Wales License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/uk/">
+Ce travail est sous licence <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/uk/">Creative Commons Attribution-Noncommercial 2.0 UK: England & Wales License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/uk/">
 
 <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/2.0/uk/88x31.png" />
 </a>
 
-Source code of the applications are dual licensed under the MIT and GPL licenses:
+Le code source de l'application est sous double licences, MIT et GPL:
 
 * http://www.opensource.org/licenses/mit-license.php
 * http://www.gnu.org/licenses/gpl.html

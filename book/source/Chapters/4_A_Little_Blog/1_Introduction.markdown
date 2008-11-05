@@ -1,32 +1,32 @@
-## A little blog
+## Un petit blog
 
-#### What will be covered
+#### Ce qui sera couvert
 
- * Setting up the example blog application
- * Creating the models
- * Configuring your routes
- * RESTful controllers
- * Some of the view helpers in `merb_helpers`
- * Configuring and sending emails
+ * Configuration de l'application de blog d'exemple
+ * Création des Models
+ * Configuration des routes
+ * Controllers RESTful
+ * Quelque helpers de vue de `merb-helper`
+ * Configuration et envoi de mails
 
-In the examples, we'll be developing a small blogging application. It's a good
-idea to grab the source code from [http://github.com/deimos1986/book_mdar/tree/master/code](http://github.com/deimos1986/book_mdar/tree/master/code), 
-so you can follow along with the examples.
+Dans cette example nous allons développer une petite application de blogging. C'est une bonne 
+idée de récupérer le code source de [http://github.com/deimos1986/book_mdar/tree/master/code](http://github.com/deimos1986/book_mdar/tree/master/code), 
+ainsi suivre avec l'exemple.
 
-First of all, let's define some of the functionality we would expect from any 
-blogging application. 
+Premièrement, nous allons définir quelques fonctionnalités que nous attendons 
+d'une application de blogging.
 
-* Publishing posts
-* Leaving comments
-* Sending email notifications
-* Attaching images
-* Authentication
+ * Puublication de billets
+ * Laisser des commentaires
+ * Envoyer des notifications par email
+ * Attacher des Images
+ * Authentification
 
-We're going to call our app `golb`. Think of it as a backward blog. Feel free 
-to change the name of your app, but if you do, remember to replace the word
-`golb` with the name of your app.
+Nous allons appeler notre application `glob`, qui est le mot blog à l'envers. Vous pouvez 
+tout à fait changer de nom pour votre application, mais souvenez vous de changer le mot 
+`glob` pour le nom de votre application.
 
-To make a new app we'll use the command
+Pour réaliser une nouvelle application, nous allons utiliser la commande
 
     merb-gen app golb
 
@@ -42,7 +42,7 @@ gems to load for plugins and generators.
   	dependencies "dm-validations"
 
 
-Now add a `config/database.yml` file with the following:
+Maintenant ajouter un fichier config/dataase comme ci suit:
 
     ---
     # This is a sample database file for the DataMapper ORM
@@ -95,4 +95,4 @@ You can also put a database URI in development.rb (or other environments) just a
       DataMapper.setup(:default, 'mysql://user:pass@localhost/database')
     end
       
-Now we're ready to rock and roll ...
+Maintenant nous sommes pret, rock and roll…

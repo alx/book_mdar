@@ -2,7 +2,7 @@
 
 (TODO) - rewrite for DM 0.9 almost done, just need to finish it!
 
-### Getting started
+###  Démarrons
 
 Building a model with Merb and DataMapper requires generating a model,
 specifying attributes (properties), and running a migration to create the
@@ -10,28 +10,36 @@ database table and all the properties. Generating a model is similar to Rails,
 as is running a migration. But unlike ActiveRecord, DataMapper does not use
 migration files to define the model.
 
+
+TRANSLATION
+Au vu des fonctionnalités nous pouvons en déduire que nous aurons besoin des models 
+suivant, `Post`, `Comment`, `Tag`, `User` et `Image`.
+
 Instead, properties are defined in the model itself. This allows you to easily
 see how your models map to the database and removes the headache of trying to
 use separate migration files (when you have conflicting or irreversible migrations).
 
-#### The Model Generator
+TRANSLATION
+Construire un model adec Merb et DataMappper nécessite de générer un model, spécifiant les attributs (propriété) et lançant une migration pour créer la table de la base de donnée et toutes les propriétés. La génération d'un modèle est similaires à Rails lançant la migration. Mais contrairement à Rails et ActiveRecords, Merb et DataMapper N'utilise pas de fichier de migration séparé. Ala place les propriétés sont définis dans le model lui-même. (Décrire l'avantage de définir les propriétés dans le modèle ? Pourquoi est-ce meilleur de séparer les migations dans ActiveRecord ?)
 
-DataMapper has a model generator just as Rails does:
+####  Le générateur de Model
+
+DataMapper a un générateur de modèle exactement comme Rails:
 
     merb-gen model post
 
-This will make a post model for you, provided that you have defined an ORM
-and the database golb, in the previous steps.
+Cela créé un modèle post pour vous, utilisant l'ORM 
+et la base de donnée glob que vous avez défini dans l'étape précédente.
 
 Note: Sometimes you might prefer to directly create a _resource_ (Model, Controller, View) instead of calling the generator tree times:
 
     merb-gen resource post
 
 
-#### Properties
+#### Propriétés
 
-So DataMapper models differ a bit from ActiveRecord models as previously
-stated. Defining the database columns is achieved with the `property` method.
+Ainsi les modèles DataMapper différe un peu d'ActiveRecord comme indiqué précédemment. 
+Définir les colonnes de la table est réalisé avec la méthode `property`.
 Add this code to the `Post` class:
 
 `app/models/post.rb`
@@ -40,8 +48,7 @@ Add this code to the `Post` class:
     property :title,  String, :lazy => false
 
 This creates a primary key (the `id` property) and the `title` property of the
-post model. As we can see, the parameters are the name of the table column
-followed by the type and finally the options.
+post model. Comme nous pouvons le voire les paramétres ont le nom de la colonne suivit par le type et enfin les options.
 
 Note: We could have also directly set the properties when we called the generator:
 
@@ -49,7 +56,7 @@ Note: We could have also directly set the properties when we called the generato
     
 By default, the lazy attribute is set to _false_ for everything except text fields.
 
-Some of the available options are:
+Voici une liste d'option disponible:
 (TODO) - cover more properties
 
     :public, :protected, :private, :accessor, :reader, :writer,
@@ -57,27 +64,27 @@ Some of the available options are:
     :format, :index, :check, :ordinal, :auto_validation, :validates, :unique,
     :lock, :track, :scale, :precision
 
-    :key          - Set as primary key
-    :serial       - auto-incrementing key
-    :lazy         - Lazy load the specified property (:lazy => true).
-    :default      - Specifies the default value
-    :field        - Specifies the table column
-    :nullable     - Can the value be null?
-    :index        - Creates a database index for the column
-    :accessor     - Set method visibility for the property accessors. Affects both
-                    reader and writer. Allowable values are :public, :protected, :private.
-    :reader       - Like the accessor option but affects only the property reader.
-    :writer       - Like the accessor option but affects only the property writer.
-    :protected    - Alias for :reader => :public, :writer => :protected
-    :private      - Alias for :reader => :public, :writer => :private
+    :key          - Définir comme clé primaire
+    :serial       - Clé auto-incrémenté
+    :lazy         - Chargement en Lazy spécifié éar la propriété (:lazy => true).
+    :default      - Défini la valeur par défaut
+    :field        - Défini le nom de la colonne
+    :nullable     - la valeur peux être null?
+    :index        - Créer un index pour la colonne
+    :accessor     - Définie la visibilité de la méthode d'accession à la propriété. Affect les deux, en lecture et écriture. 
+                    Les valeurs permisent sont :public, :protected, :private.
+    :reader       - Comme l'option accessor mais n'affectant que la propriété de lecture.
+    :writer       - Comme l'option accessor mais n'affectant que la propriété d'écriture.
+    :protected    - Alias pour :reader => :public, :writer => :protected
+    :private      - Alias pour :reader => :public, :writer => :private
 
 (TODO) - talk about accessors and overriding them
-
-DataMapper supports the following properties in the core:
+    
+DataMapper supporte les propriétés suivantes:
 
 * TrueClass, Boolean
 * String
-* Text (limit of 65k characters by default)
+* Text (limitation à 65k charactères par défaut)
 * Float
 * Fixnum, Integer
 * BigDecimal
@@ -93,7 +100,7 @@ DataMapper supports the following properties in the core:
 #### Creating
 Before a new record is created, be sure you have syncronized your model with the database.
 In order to do this, load the merb console with:
-    
+
      merb -i
      
 Then migrate your Post model with:
@@ -300,13 +307,19 @@ contain the two keys of each post-categorization pair.
 
 (TODO) - still needs 0.9 love - mostly done now, I think
 
-It's a known fact that users will enter invalid, blank or malicious data into
-your web app.
+C'est un fait reconnu, les utilisateurs entreront des données dans un mauvais format, laisseront un champs requis blanc ou même entreront d'horribles données 
+dans votre application Web.
+
 
 We need to guard against user error by validating anything that we need to
 save out to our persistence layers. Sometimes that means guarding against
 hack attempts, but most of the time it means guarding against invalid data
 and accidents.
+
+TRANSLATION
+Alors nous avons besoin d'enregistrer ca dans notre couche de persistence. 
+Parfois, c'est de la protection contre des attaques, mais souvent c'est simplement contre des données invalides entrées 
+par erreur.
 
 Both ActiveRecord and DataMapper have a concept called Validations, which is
 ultimately a set of callbacks which fire right before an object gets saved out
@@ -382,10 +395,16 @@ that's it - game over. The only way to bypass that validation is to
 `save\_without\_validations` and that skips all of your validations, rather
 than just this one.
 
+
 But with DataMapper and dm-validations , you can check for the validity of an
 object depending on the circumstance you're in. Here's what that blog post model
 would look like if we wanted to validate blog posts by idiots, but not from our
 not-so-idiotic scrapper:
+
+TRANSLATION
+Mais avec DataMapper et son système de Validation, vous pouvez vérifier la validité d'un 
+objet en fonction de la circonstance où vous êtes. Ici vous pouvez vouloir valider l'enregistrement des billets par les idiots, mais pas par notre 
+récupérateur-peu-idiot.
 
     require 'dm-validations'
 

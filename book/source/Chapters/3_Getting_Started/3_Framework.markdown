@@ -1,8 +1,8 @@
-## The Framework
+## Le Framework
 
-The directory structure of the project created should look like the following. 
-We'll give brief overview of the framework here and go into further details of 
-each component in subsequent chapters.
+La structure des dossiers du projet créer doit ressembler à ce qu'il suit. 
+Nous allons faire une brêve vue d'ensemble du framework ici et aller plus en profondeur 
+sur chaque composant dans les chapitres suivants.
 
 	test
 	  |--> app
@@ -12,12 +12,12 @@ each component in subsequent chapters.
 	  |--> public
 	  `--> spec
 
-The `app` folder contains your models, views, controllers and helpers. It also 
-has Parts, they inherit from `AbstractController` and similar to the old Rails 
-components, but are lightweight and are useful for sidebars, widgets etc. 
+Le répertoire `app` contiens vos models, vues (incluant les pages d'exceptions et les layouts), les controllers et les helpers. Il y a aussi 
+les Parts, ils héritent de `AbstractController` et sont similaire aux anciens composant Rails, i
+mais ils sont léger et très pratique pour les sidebars widgets etc... 
 
-`Mailers`, which also inherit from the `AbstractController` have their own 
-folder where the controllers and views live. 
+`Mailers` qui héritent aussi de `AbstractController` ont leur propre 
+dossier où les contrôlleurs et vues vivent.
 
 	app
 	  |--> controllers
@@ -29,21 +29,21 @@ folder where the controllers and views live.
 	  `--> views
 
 
-The `config` folder has all the configuration files and environments. It's 
-important to edit the `init.rb` and `database.yml` files in here before 
-running Merb. 
+Le dossier `config` possédent tous les fichiers de configurations et d'environnement. Il est 
+important d'éditer les fichier `init.rb` et `database.yml` avant 
+de démarrer Merb. 
 
-The Merb router, which maps the incoming requests to the controllers is also 
-here. The `rack.rb` file is the rack handler and you can pass options to 
-`merb -a` to change rack adapter.
+Le routeur de Merb, qui maps toutes les requêtes entrante vers les contrôlleurs et aussi 
+ici. Le fichier `rack.rb` est le gestionnaire de rack et vous pouvez utiliser l'option 
+`merb -a` pour changer d'adapter rack.
 
 	config
 	  `--> environments
 
-RSpec specs can be found in the spec folder.
+RSpec, les specs peuvent être trouvé dans le dossier spec.
 
 	spec
 	
-In addition to these folders you can have a `gem` directory, which stores 
-frozen gems (see Freezing Gems for more info), and a `lib` folder to store 
-other ruby files.
+En complément de ces dossier, vous pouvez avoir un répertoire `gem`, qui conserve 
+les gems gelé (voir le gel des gems pour plus d'information) et un dossier `lib` pour enregistrer 
+d'autre fichier ruby.

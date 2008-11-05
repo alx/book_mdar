@@ -1,24 +1,24 @@
-## Getting Started
+## Démarrer
 
 <a href="http://xkcd.com/303/" target="_blank"> <img src="http://imgs.xkcd.com/comics/compiling.png" alt="XKCD - Compiling"> </a>
 
-Before we get started I'm going to assume you have the following installed:
+Avant de commencer assurez vous d'avoir bien installer les outils suivants:
 
 * [Ruby](http://www.ruby-lang.org/) 
+* [SVN](http://subversion.tigris.org/) et [git](http://git.or.cz/) (sur OSX, l'installation du port `git-core` fonctionne pour moi)
 * [RubyGems >= 1.1.0](http://www.rubygems.org/)
-* A DBMS (we'll use [MySQL](http://mysql.org/))
-* [SVN](http://subversion.tigris.org/) and [git](http://git.or.cz/)
+* Un DBMS (nous utiliserons [MySQL](http://mysql.org/))
 
-#### What will be covered
+#### Ce que ça couvre
 
-* Installing Merb, DataMapper and RSpec
-* Creating a temporary test app
-* The basic directory structure for the framework
+ * Installation de Merb, DataMapper et RSpec
+ * Création d'une application de test temporaire
+ * Les base de la structure des fichiers pour le framework
 
-### The Easy Way
+### La solution facile
 
-If you're on a *nix operating system then keeping up to date with all the edge 
-versions of these gems can be made really easy by using the Sake tasks.
+Si vous êtes sur un système d'explotation *nix (comprenant Mac OS X) alors garder les mises à jours de toutes les versions 
+de ces gems peux être fait simplement en utilisant les tâches Sake.
 
 Merb sake tasks can be found in merb-more repository under tools directory.
 Sake tasks for DataMapper are in dm-dev repository at
@@ -45,44 +45,45 @@ do the update and install new updated gems. Use sake merb:gems:refresh and dm:ge
 
 ### If You're Hardcore
 
-#### Installing Merb
+#### Installation de Merb
+
 ***
-If you have an older version of Merb (<0.9.2) you should remove all merb and 
-datamapper related gems before continuing. Use `gem list` to see your installed
-gems. The following command will uninstall the gem you specify:
+Si vous avez une ancienne version de Merb (<0.9.2) vous devez supprimer tous les gems de merb et 
+datamapper avant de continuer. Utilisez `gem list` pour voir vos gems d'installé.
+The following command will uninstall the gem you specify:
 
     sudo gem uninstall the_gem_name
 ***
-Installing the `merb` gems should be as simple as:
+L'installation des gems `merb` est aussi simple que:
     
     sudo gem install merb --source http://merbivore.org
     
-*or for JRuby:*
+*ou pour JRuby:*
     
     jruby -S gem install merb mongrel 
     
-__Unfortunately__ we are living right on the edge of development so we'll need 
-to get down and dirty with building our own gems from source. Luckily this is 
-much easier than it sounds... 
+__Malheureusement__ nous vivons sur une version en dévelopement alors nous aurons besoin 
+recuperer et compiler notre propre gems à partir des sources. Heureusment c'est 
+plus simple que ce que l'on aurait pu croire...
 
-Start by installing the `gem` dependancies:
+Commençons par installer les `gems` en dépendances:
 
     sudo gem install rack mongrel json erubis mime-types rspec hpricot \
         mocha rubigen haml markaby mailfactory ruby2ruby
 
-*or for JRuby:*
+*ou pour JRuby:*
 
     jruby -S gem install rack mongrel json_pure erubis mime-types rspec hpricot \
         mocha rubigen haml markaby mailfactory ruby2ruby
 
-Then download the `merb` source:
+Ensuite téléchargez les sources de `merb`:
 
     git clone git://github.com/sam/extlib.git
     git clone git://github.com/wycats/merb-core.git
     git clone git://github.com/wycats/merb-plugins.git
     git clone git://github.com/wycats/merb-more.git
 
-Then install the gems via rake:
+Enfin, installation des gems grâce à rake:
 
     cd extlib ; rake install ; cd ..
     cd merb-core ; rake install ; cd ..    
@@ -90,27 +91,27 @@ Then install the gems via rake:
     cd merb-plugins; rake install ; cd ..
 
 Note that Merb and DataMappers share Extlib library since after 0.9.3 release of DM.
-The `json_pure` gem is needed for merb to install on [JRuby](http://jruby.codehaus.org/) (Java implementation of a Ruby Interpreter), otherwise use the `json` gem as it's faster.
+Le gem `json_pure` est nécessaire pour installer merb sur [JRuby](http://jruby.codehaus.org/) (l'implémentation Java de l'interpréteur Ruby), sinon l'utilisation du gem `json` est plus rapide.
 
-Merb is ORM agnostic, but as the title of this book suggests we'll be using 
-DataMapper. Should you want to stick with ActiveRecord or play with Sequel, 
-check the [Merb documentation](http://merb.rubyforge.org/files/README.html) for install instructions.
+Merb est ORM agnostic, mais comme le titre de ce livre le suggère, nous allons utiliser 
+DataMapper. Si vous souhaitez utilisé ActiveRecord ou vous amuser avec Sequel, 
+consulter la [documentation de merb](http://merb.rubyforge.org/files/README.html) pour les instructions d'installation.
 
-#### Installing DataMapper
+#### Installation de DataMapper
 
 ***
-DataMapper has spit into the gems `dm-core` and `dm-more`, the old `datamapper` 
-gem is now outdated.
+DataMapper est séparé entre `dm-core` et `dm-more`, l'ancien gem `datamapper` 
+est maintenant dépassé.
 
-If you have an older version of `datamapper`, `data_objects`, or `do_mysql`, 
-`merb_datamapper` (< 0.9) you should remove them first.
+Si vous avez d'ancienne version de `datamapper`, `data_objects` ou  `do_mysql`, 
+`merb_datamapper` (< 0.9) vous devez les supprimé en premier. 
 ***
 
-We will use MySQL in the following example, but you can use either sqlite3 or 
-PostgreSQL, just install the appropriate gem. You will also need to ensure that 
-MySQL is on your system path for the gem to install correctly.
+Nous allons utilisé MySQL dans les exemples suivant, mais vous pouvez utiliser sqlite3 ou 
+PostgreSQL après l'installation du gem approprié. Vous devez aussi vous assurez que 
+MySQL est dans votre path système pour installer correctement le gem.
 
-To get the gems from source:
+Récupérer les gems par les sources:
 
 
     git clone git://github.com/sam/extlib.git  
@@ -131,12 +132,12 @@ To get the gems from source:
     cd dm-more
     rake install
     
-To update a gem from source, run `git pull` and `rake install` again.
+Pour mettre à jour les gems à partir des sources, lancer `git pull` et encore une fois `rake install`.
 
-#### Install RSpec
+#### Installation de RSpec
 
-The `rspec` gem was installed in the Merb section above. However, if you want 
-to grab the source, run one of the following commands:
+Le gem `rspec` a été installé précédement avec l'installation de Merb. Néanmoins, si pour quelque raison 
+que ce soit, vous ne l'avez pas installer, ou que vous souhaitez l'installer à partir des source, lancez les commandes suivantes:
 
     gem install -r rspec
     
