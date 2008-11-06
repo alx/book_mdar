@@ -69,7 +69,7 @@ plus simple que ce que l'on aurait pu croire...
 Commençons par installer les `gems` en dépendances:
 
     sudo gem install rack mongrel json erubis mime-types rspec hpricot \
-        mocha rubigen haml markaby mailfactory ruby2ruby
+        mocha rubigen haml markaby mailfactory ruby2ruby templater
 
 *ou pour JRuby:*
 
