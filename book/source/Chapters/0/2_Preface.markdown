@@ -1,7 +1,7 @@
 ## Préface
 
 Ceci est l'éffort collaboratif de documenter les fonctionnalités de Merb et DataMapper
-tout en fournissant des exemples d'applications réalisé avec Merb.  
+tout en fournissant des exemples d'applications réalisées avec Merb.  
 
 ___Pour qui est donc tout ceci?___
 
@@ -9,7 +9,7 @@ Le lecteur cible est n'importe qui ayant quelques expériences avec l'écriture 
 
 Copyright &copy; 2008 aux auteurs respectifs.
 
-* (NdT) New Bamboo est la société de la première personne a avoir contribué à ce livre
+* (NdT) New Bamboo est la société de la première personne à avoir contribué à ce livre
 
 ### Auteurs
 
