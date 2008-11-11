@@ -1,6 +1,6 @@
 ## Qu'y a-t-il au sujet de Ruby on Rails?
 
-> [Merb est] plus dur, meilleur, plus rapide, plus fort, citation des Daft Punk - Max Williams
+> [Merb est] harder, better, faster, stronger, citation des Daft Punk - Max Williams
 
 Alors, quel est le problème ? Nous avons Ruby on Rails et c'est assez, c'est ça ? 
 Il ne fait aucun doute que Ruby on Rails a secoué le monde du développement 
