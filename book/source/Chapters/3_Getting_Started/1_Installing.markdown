@@ -43,7 +43,7 @@ to update Merb and DataMapper gems.
 But what you really want is probably to wipe out Merb and DM gems before update,
 do the update and install new updated gems. Use sake merb:gems:refresh and dm:gems:refresh to do so.
 
-### If You're Hardcore
+### Si vous êtes un irréductible
 
 #### Installation de Merb
 
@@ -83,19 +83,20 @@ Ensuite téléchargez les sources de `merb`:
     git clone git://github.com/wycats/merb-plugins.git
     git clone git://github.com/wycats/merb-more.git
 
-Enfin, installation des gems grâce à rake:
+Enfin, installez les gems grâce à rake:
 
     cd extlib ; rake install ; cd ..
     cd merb-core ; rake install ; cd ..    
     cd merb-more ; rake install ; cd ..
     cd merb-plugins; rake install ; cd ..
 
-Note that Merb and DataMappers share Extlib library since after 0.9.3 release of DM.
-Le gem `json_pure` est nécessaire pour installer merb sur [JRuby](http://jruby.codehaus.org/) (l'implémentation Java de l'interpréteur Ruby), sinon l'utilisation du gem `json` est plus rapide.
+A noter que Merb et DataMapper partagent la bibliothèque Extlib depuis la version 0.9.3 de DM. Le gem `json_pure` 
+est nécessaire pour installer merb avec [JRuby](http://jruby.codehaus.org/) (l'implémentation Java de l'interpréteur Ruby), sinon l'utilisation 
+du gem `json` est plus rapide.
 
 Merb est ORM agnostic, mais comme le titre de ce livre le suggère, nous allons utiliser 
 DataMapper. Si vous souhaitez utilisé ActiveRecord ou vous amuser avec Sequel, 
-consulter la [documentation de merb](http://merb.rubyforge.org/files/README.html) pour les instructions d'installation.
+consulter la [documentation de Merb](http://merb.rubyforge.org/files/README.html) pour les instructions d'installation.
 
 #### Installation de DataMapper
 
@@ -103,15 +104,15 @@ consulter la [documentation de merb](http://merb.rubyforge.org/files/README.html
 DataMapper est séparé entre `dm-core` et `dm-more`, l'ancien gem `datamapper` 
 est maintenant dépassé.
 
-Si vous avez d'ancienne version de `datamapper`, `data_objects` ou  `do_mysql`, 
-`merb_datamapper` (< 0.9) vous devez les supprimé en premier. 
+Si vous avez des anciennes versions de `datamapper`, `data_objects` ou  `do_mysql`, 
+`merb_datamapper` (< 0.9) vous devez, tout d'abord, les supprimer. 
 ***
 
-Nous allons utilisé MySQL dans les exemples suivant, mais vous pouvez utiliser sqlite3 ou 
-PostgreSQL après l'installation du gem approprié. Vous devez aussi vous assurez que 
+Nous allons utiliser MySQL dans les exemples suivants, mais vous pouvez utiliser sqlite3 ou 
+PostgreSQL il vous suffit juste d'installer le gem approprié. Vous devez aussi vous assurez que 
 MySQL est dans votre path système pour installer correctement le gem.
 
-Récupérer les gems par les sources:
+Pour récupérer les gems par les sources:
 
 
     git clone git://github.com/sam/extlib.git  
@@ -132,11 +133,11 @@ Récupérer les gems par les sources:
     cd dm-more
     rake install
     
-Pour mettre à jour les gems à partir des sources, lancer `git pull` et encore une fois `rake install`.
+Pour mettre à jour les gems à partir des sources, lancez `git pull` et encore une fois `rake install`.
 
 #### Installation de RSpec
 
-Le gem `rspec` a été installé précédement avec l'installation de Merb. Néanmoins, si pour quelque raison 
+Le gem `rspec` a été installé précédemment avec l'installation de Merb. Néanmoins, si pour quelque raison 
 que ce soit, vous ne l'avez pas installer, ou que vous souhaitez l'installer à partir des source, lancez les commandes suivantes:
 
     gem install -r rspec

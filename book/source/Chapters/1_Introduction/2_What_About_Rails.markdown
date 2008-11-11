@@ -31,9 +31,7 @@ building fast and scalable web applications.
 
 A la fin de la journée c'est une question de choix. Il y a plusieurs framework ruby 
 qui surgissent, cela contribue de toute évidence au succès de Rails.
-At the end of the day it's about choice. There are many new Ruby frameworks 
-springing up, undoubtedly encouraged by the success of Rails. Notre avis est que 
-Merb est le plus prométeur de tous
+Notre avis est que Merb est le plus prométeur de tous
 
 
 Si vous aimez regarder d'autre framework, ces liens vous aiderons à commencer:

@@ -1,16 +1,13 @@
 ## Création d'une application
 
-One of the best ways to become familiar with a framework is to jump in and get 
-your hands dirty.  So now that we've got everything installed, it's time to roll 
-up your sleeves and create a test Merb application. 
+La meilleur façon de se familiariser avec un framework est de rentrer dedans et de se 
+salir les mains. Alors maintenant que tout est installé, il est temps de remonter 
+vos manches et de créer une application Merb de test.
 
-TRANSLATION
-Maintenant que tout est installé, il est temps de créer une application Merb de test.
-
-Merb-more vient avec un `gem` appelé `merb-gen`, cela fournit un outil en ligne de 
+Merb-more vient avec un `gem` appelé `merb-gen`, celui-ci fournit un outil en ligne de 
 commande du même nom utilisé par tous les générateurs dont vous aurez besoin. Vous pouvez 
-le considérer comme le `script/generate` de Merb. Lancer la commande `merb-gen` sans arguments 
-vous montreras tous les générateurs disponible.
+le considérer comme le `script/generate` de Merb. Lancez la commande `merb-gen` sans arguments 
+vous montrera tous les générateurs disponibles.
 
 Merb suit la même convention de nommage que Rails, ainsi 
 'my\_test\_app' et 'Test2' sont des noms valides mais 'T 3' ne l'est pas (ils ont besoin d'être 
@@ -18,8 +15,8 @@ des noms valides de tables SQL).
 
     merb-gen app test
     
-Cela générera une application Merb vide, allons-y et regarder. Vous remarquerais 
-que la structure des répertoire est similaire à Rails, avec peu de différence.
+Cela générera une application Merb vide, allez-y et regardez. Vous remarquerez 
+que la structure des répertoires est similaire à celle de Rails, avec peu de différences.
 
     # sortie attendu
     RubiGen::Scripts::Generate

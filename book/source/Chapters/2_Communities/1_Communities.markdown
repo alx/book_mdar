@@ -8,7 +8,7 @@ source pour ses contributions, si quelque chose nécessite d'être résolu.
  
 ### Site internet
 
-Ils sont les premiers endroits à allez pour chercher de l'aide. Examiner la documentation de l'AP et 
+Ils sont les premiers endroits à allez pour chercher de l'aide. Examiner la documentation de l'API et 
 regarder si vous pouvez trouver une réponse à votre question.
 
 * [http://merbivore.com/](http://merbivore.com/)
